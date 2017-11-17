@@ -1,4 +1,4 @@
-package com.las.learn.httpclient;
+package com.las.learn.httpclient.connManager;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -41,8 +41,14 @@ import org.apache.http.message.LineParser;
 import org.apache.http.ssl.SSLContexts;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.EntityUtils;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class PoolConnUtil {
+public class PooledConn {
+
+    private static Logger logger = LoggerFactory.getLogger(PooledConn.class);
+
     private static Integer CONNECTION_TIMEOUT = 2 * 1000; //设置请求超时5秒钟 根据业务调整
     private static Integer SO_TIMEOUT = 2 * 1000; //设置等待数据超时时间5秒钟 根据业务调整
     private static PoolingHttpClientConnectionManager connManager;
@@ -162,6 +168,13 @@ public class PoolConnUtil {
         }
 
         return responseText;
+    }
+
+
+    @Test
+    public void testGet() {
+        String result = PooledConn.sendGet("http://wwww.baidu.com");
+        logger.info(result);
     }
 
 }

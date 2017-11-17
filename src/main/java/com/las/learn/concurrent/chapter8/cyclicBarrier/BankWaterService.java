@@ -46,7 +46,9 @@ public class BankWaterService implements Runnable {
                     try {
                         System.out.println(c.getNumberWaiting());
                         c.await();
-                    } catch (InterruptedException | BrokenBarrierException e) {
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (BrokenBarrierException e) {
                         e.printStackTrace();
                     }
                 }
