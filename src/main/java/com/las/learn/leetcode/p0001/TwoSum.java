@@ -1,4 +1,4 @@
-package com.las.learn.leetcode;
+package com.las.learn.leetcode.p0001;
 
 import java.util.Arrays;
 import java.util.HashMap;
