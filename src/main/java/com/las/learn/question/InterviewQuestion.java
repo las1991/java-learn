@@ -1,4 +1,4 @@
-package com.las.learn;
+package com.las.learn.question;
 
 import org.junit.Test;
 
@@ -16,8 +16,8 @@ public class InterviewQuestion {
     @Test
     public void test1() {
         int j = 0;
-        for (int i = 0; i < 100; i++, j++) {
-            j = j++;
+        for (int i = 0; i < 100; i++) {
+            j = ++j;
         }
         System.out.println(j);
     }
