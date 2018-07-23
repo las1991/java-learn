@@ -1,6 +1,6 @@
 package com.las.learn.gof.specification;
 
-public class UserByAgeThan extends CompositeSpecification {
+public class UserByAgeThan extends CompositeSpecification<User> {
 
     private int age;
 

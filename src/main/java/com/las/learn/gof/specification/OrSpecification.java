@@ -1,18 +1,23 @@
 package com.las.learn.gof.specification;
 
-public class OrSpecification extends CompositeSpecification {
-    //左右两个规格书
-    private IUserSpecification left;
-    private IUserSpecification right;
+/**
+ * or运算
+ * @param <T>
+ */
+public class OrSpecification<T> extends CompositeSpecification<T> {
+    /**
+     * 左右两个规格书
+     */
+    private ISpecification left;
+    private ISpecification right;
 
-    public OrSpecification(IUserSpecification _left, IUserSpecification _right) {
+    public OrSpecification(ISpecification _left, ISpecification _right) {
         this.left = _left;
         this.right = _right;
     }
 
-    //or运算
     @Override
-    public boolean isSatisfiedBy(User user) {
+    public boolean isSatisfiedBy(T user) {
         return left.isSatisfiedBy(user) || right.isSatisfiedBy(user);
     }
 }

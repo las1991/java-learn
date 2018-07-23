@@ -1,12 +1,14 @@
 package com.las.learn.gof.specification;
 
-public class UserByNameLike extends CompositeSpecification {
+public class UserByNameLike extends CompositeSpecification<User> {
 
     private String pattern;
 
     public UserByNameLike(String pattern) {
-        this.pattern = pattern.toLowerCase(); // ignoring locale for now
-        this.pattern = this.pattern.replace(".", "\\."); // "\\" is escaped to "\" (thanks, Alan M)
+        // ignoring locale for now
+        this.pattern = pattern.toLowerCase();
+        // "\\" is escaped to "\" (thanks, Alan M)
+        this.pattern = this.pattern.replace(".", "\\.");
         // ... escape any other potentially problematic characters here
         this.pattern = this.pattern.replace("?", ".");
         this.pattern = this.pattern.replace("%", ".*");

@@ -15,8 +15,8 @@ public class Client {
         //打印出名字包含国庆的人员
         System.out.println("===名字包含国庆的人员===");
         //定义一个规格
-        IUserSpecification spec = new UserByAgeThan(25);
-        IUserSpecification spec2 = new UserByNameLike("%国庆%");
+        ISpecification spec = new UserByAgeThan(25);
+        ISpecification spec2 = new UserByNameLike("%国庆%");
         for (User u : userProvider.findUser(spec.and(spec2))) {
             System.out.println(u);
         }

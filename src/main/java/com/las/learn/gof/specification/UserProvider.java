@@ -12,7 +12,7 @@ public class UserProvider implements IUserProvider {
     }
 
     @Override
-    public Iterable<? extends User> findUser(IUserSpecification userSpecification) {
+    public Iterable<? extends User> findUser(ISpecification userSpecification) {
         ArrayList<User> result = new ArrayList<>();
         data.forEach(x -> {
             if (userSpecification.isSatisfiedBy(x)) {
