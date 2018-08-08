@@ -1,4 +1,4 @@
-package com.las.learn.gof.specification;
+package com.las.learn.gof.specification.userExample;
 
 import java.util.List;
 

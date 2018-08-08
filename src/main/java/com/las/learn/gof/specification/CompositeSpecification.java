@@ -5,18 +5,32 @@ public abstract class CompositeSpecification<T> implements ISpecification<T> {
     @Override
     public abstract boolean isSatisfiedBy(T user);
 
-    @Override
-    public ISpecification and(ISpecification spec) {
+    /**
+     * and操作
+     *
+     * @param spec
+     * @return
+     */
+    public CompositeSpecification and(ISpecification spec) {
         return new AndSpecification(this, spec);
     }
 
-    @Override
-    public ISpecification not() {
+    /**
+     * not操作
+     *
+     * @return
+     */
+    public CompositeSpecification not() {
         return new NotSpecification(this);
     }
 
-    @Override
-    public ISpecification or(ISpecification spec) {
+    /**
+     * or操作
+     *
+     * @param spec
+     * @return
+     */
+    public CompositeSpecification or(ISpecification spec) {
         return new OrSpecification(this, spec);
     }
 }
