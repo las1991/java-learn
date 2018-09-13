@@ -1,9 +1,18 @@
-package com.las.learn.gof.specification;
+package com.las.learn.gof.specification.userExample;
+
+import com.las.learn.gof.specification.CompositeSpecification;
+import com.las.learn.gof.specification.ISpecification;
+import com.las.learn.gof.specification.userExample.spec.UserByAgeThan;
+import com.las.learn.gof.specification.userExample.spec.UserByNameLike;
+import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class Client {
-    public static void main(String[] args) {
+
+    @Test
+    public void testSpec() {
         //首先初始化一批用户
         ArrayList<User> userList = new ArrayList<User>();
         userList.add(new User("苏国庆", 23));
@@ -15,11 +24,16 @@ public class Client {
         //打印出名字包含国庆的人员
         System.out.println("===名字包含国庆的人员===");
         //定义一个规格
-        ISpecification spec = new UserByAgeThan(25);
-        ISpecification spec2 = new UserByNameLike("%国庆%");
+        CompositeSpecification spec = new UserByAgeThan(25);
+        CompositeSpecification spec2 = new UserByNameLike("%国庆%");
         for (User u : userProvider.findUser(spec.and(spec2))) {
             System.out.println(u);
         }
+    }
+
+    @Test
+    public void testSql() {
+        CompositeSpecification spec = new UserByAgeThan(25);
 
     }
 }

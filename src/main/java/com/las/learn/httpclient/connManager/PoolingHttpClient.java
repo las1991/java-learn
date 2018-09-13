@@ -59,8 +59,8 @@ public class PoolingHttpClient {
     }
 
     public void postJson() {
-        String json = "{\"appCode\":\"snap\",\"baiduChanelToken\":\"\",\"baiduUserToken\":\"\",\"gcmToken\":\"\",\"jsessionId\":\"\",\"osType\":\"android\",\"productCode\":\"snap\",\"pwd\":\"123456\",\"user\":\"las@sengled.com\",\"uuid\":\"3083bff77fea0945\",\"xgToken\":\"UM\"}";
-        String url = "http://jx1-test.cloud.sengled.com:8000/user/app/customer/AuthenCross.json";
+        String json = "{\"appCode\":\"snap\",\"baiduChanelToken\":\"\",\"baiduUserToken\":\"\",\"gcmToken\":\"\",\"jsessionId\":\"\",\"osType\":\"android\",\"productCode\":\"snap\",\"pwd\":\"123456\",\"userExample\":\"las@sengled.com\",\"uuid\":\"3083bff77fea0945\",\"xgToken\":\"UM\"}";
+        String url = "http://jx1-test.cloud.sengled.com:8000/userExample/app/customer/AuthenCross.json";
         try {
             HttpPost post = new HttpPost(url);
             HttpEntity entity = new StringEntity(json, ContentType.APPLICATION_JSON);
