@@ -1,4 +1,4 @@
-package com.las.learn.gof.specification;
+package com.las.learn.designpattern.specification;
 
 public abstract class CompositeSpecification<T> implements ISpecification<T> {
 

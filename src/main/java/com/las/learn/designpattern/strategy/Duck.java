@@ -1,4 +1,4 @@
-package com.las.learn.gof.strategy;
+package com.las.learn.designpattern.strategy;
 
 public abstract class Duck {
 

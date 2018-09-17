@@ -1,4 +1,4 @@
-package com.las.learn.gof.specification;
+package com.las.learn.designpattern.specification;
 
 /**
  * 进行and运算

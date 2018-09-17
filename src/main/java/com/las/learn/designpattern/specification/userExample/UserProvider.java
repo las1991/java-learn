@@ -1,6 +1,6 @@
-package com.las.learn.gof.specification.userExample;
+package com.las.learn.designpattern.specification.userExample;
 
-import com.las.learn.gof.specification.ISpecification;
+import com.las.learn.designpattern.specification.ISpecification;
 
 import java.util.ArrayList;
 import java.util.List;

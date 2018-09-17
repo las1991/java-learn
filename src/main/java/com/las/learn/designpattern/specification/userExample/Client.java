@@ -1,9 +1,9 @@
-package com.las.learn.gof.specification.userExample;
+package com.las.learn.designpattern.specification.userExample;
 
-import com.las.learn.gof.specification.CompositeSpecification;
-import com.las.learn.gof.specification.ISpecification;
-import com.las.learn.gof.specification.userExample.spec.UserByAgeThan;
-import com.las.learn.gof.specification.userExample.spec.UserByNameLike;
+import com.las.learn.designpattern.specification.CompositeSpecification;
+import com.las.learn.designpattern.specification.ISpecification;
+import com.las.learn.designpattern.specification.userExample.spec.UserByAgeThan;
+import com.las.learn.designpattern.specification.userExample.spec.UserByNameLike;
 import org.junit.Test;
 
 import java.util.ArrayList;

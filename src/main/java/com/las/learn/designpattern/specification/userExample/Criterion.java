@@ -1,4 +1,4 @@
-package com.las.learn.gof.specification.userExample;
+package com.las.learn.designpattern.specification.userExample;
 
 import java.util.List;
 
