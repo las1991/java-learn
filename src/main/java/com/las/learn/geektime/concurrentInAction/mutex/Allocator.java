@@ -41,6 +41,7 @@ public class Allocator {
         return true;
     }
 
+    //用“等待-通知”机制优化循环等待
     public synchronized void apply(Object from, Object to) {
         while (als.contains(from) || als.contains(to)) {
             try {
