@@ -1,4 +1,4 @@
-package com.las.learn.geektime.concurrentInAction.mutex;
+package com.las.learn.geektime.concurrentInAction.mutexLock;
 
 import java.util.ArrayList;
 import java.util.List;
