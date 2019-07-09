@@ -23,4 +23,10 @@ public class SortTest {
         System.out.println(Arrays.toString(array1));
     }
 
+    @Test
+    public void testBubble() {
+        sort.bubbleSort(array1);
+        System.out.println(Arrays.toString(array1));
+    }
+
 }
