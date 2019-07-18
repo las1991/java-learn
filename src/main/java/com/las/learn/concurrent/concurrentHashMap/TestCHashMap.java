@@ -4,20 +4,21 @@ import org.junit.Test;
 import sun.misc.Unsafe;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class TestCHashMap {
     static {
-        Unsafe unsafe = sun.misc.Unsafe.getUnsafe();
-        Class<?> ak = Node[].class;
-        int ABASE = unsafe.arrayBaseOffset(ak);
-        System.out.println("ABASE:" + ABASE);
-        int scale = unsafe.arrayIndexScale(ak);
-        System.out.println("scale:" + scale);
-        if ((scale & (scale - 1)) != 0) {
-            throw new Error("data type scale not a power of two");
-        }
-        int ASHIFT = 31 - Integer.numberOfLeadingZeros(scale);
-        System.out.println("ASHIFT:" + ASHIFT);
+//        Unsafe unsafe = sun.misc.Unsafe.getUnsafe();
+//        Class<?> ak = Node[].class;
+//        int ABASE = unsafe.arrayBaseOffset(ak);
+//        System.out.println("ABASE:" + ABASE);
+//        int scale = unsafe.arrayIndexScale(ak);
+//        System.out.println("scale:" + scale);
+//        if ((scale & (scale - 1)) != 0) {
+//            throw new Error("data type scale not a power of two");
+//        }
+//        int ASHIFT = 31 - Integer.numberOfLeadingZeros(scale);
+//        System.out.println("ASHIFT:" + ASHIFT);
     }
 
     static class Node<K, V> implements Map.Entry<K, V> {
@@ -82,6 +83,10 @@ public class TestCHashMap {
 
     @Test
     public void testUnsafe() {
-
+        ConcurrentHashMap map = new ConcurrentHashMap();
+        map.put(new Object(), new Object());
+        map.get(new Object());
+        map.size();
+        map.contains(new Object());
     }
 }
