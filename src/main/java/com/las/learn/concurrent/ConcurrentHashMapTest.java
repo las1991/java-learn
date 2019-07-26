@@ -1,6 +1,9 @@
 package com.las.learn.concurrent;
 
+import org.junit.Test;
+
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -13,38 +16,40 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ConcurrentHashMapTest {
 
     public static void testHashMap() throws InterruptedException {
-        final HashMap<String,String> map=new HashMap<String, String>(2);
-            Thread t=new Thread(new Runnable() {
-                public void run() {
-                    for (int i=0;i<10000;i++){
-                        new Thread(new Runnable() {
-                            public void run() {
-                                map.put(UUID.randomUUID().toString(),"");
-                            }
-                        },"ftf"+i).start();
-                    }
+        final HashMap<String, String> map = new HashMap<String, String>(2);
+        Thread t = new Thread(new Runnable() {
+            public void run() {
+                for (int i = 0; i < 10000; i++) {
+                    new Thread(new Runnable() {
+                        public void run() {
+                            map.put(UUID.randomUUID().toString(), "");
+                        }
+                    }, "ftf" + i).start();
                 }
-            },"ftf");
+            }
+        }, "ftf");
         t.start();
         t.join();
     }
 
-    public static void testConcurrentHashMap(){
-        final ConcurrentHashMap<String,String> map=new ConcurrentHashMap<String,String>();
-        Thread t=new Thread(new Runnable() {
+    public static void testConcurrentHashMap() {
+        final ConcurrentHashMap<String, String> map = new ConcurrentHashMap<String, String>();
+        Thread t = new Thread(new Runnable() {
             public void run() {
-                for (int i=0;i<10000;i++){
+                for (int i = 0; i < 10000; i++) {
                     new Thread(new Runnable() {
                         public void run() {
-                            map.put(UUID.randomUUID().toString(),UUID.randomUUID().toString());
+                            map.put(UUID.randomUUID().toString(), UUID.randomUUID().toString());
                         }
-                    },"thread-"+i);
+                    }, "thread-" + i);
                 }
             }
-        },"");
+        }, "");
     }
 
-    public static void main(String[] args) {
-        ConcurrentHashMap<String,String> hashMap=new ConcurrentHashMap<String, String>();
+    @Test
+    public void test() {
+        ConcurrentHashMap<String, String> hashMap = new ConcurrentHashMap<String, String>();
+        Iterator iterator = hashMap.entrySet().iterator();
     }
 }
