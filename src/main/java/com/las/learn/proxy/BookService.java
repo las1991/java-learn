@@ -2,8 +2,8 @@ package com.las.learn.proxy;
 
 public interface BookService {
 
-    Boolean addBook(Book book);
+    public Boolean addBook(Book book);
 
-    Book getBook(long id);
+    public Book getBook(long id);
 
 }
