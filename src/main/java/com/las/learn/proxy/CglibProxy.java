@@ -30,6 +30,7 @@ public class CglibProxy implements MethodInterceptor {
     }
 
     public static Object getProxy(Object targetObject) {
+        log.info("{}",targetObject.getClass());
         Enhancer enhancer = new Enhancer();
         //设置父类,因为Cglib是针对指定的类生成一个子类，所以需要指定父类
         enhancer.setSuperclass(targetObject.getClass());

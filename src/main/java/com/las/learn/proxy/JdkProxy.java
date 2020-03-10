@@ -28,6 +28,7 @@ public class JdkProxy implements InvocationHandler {
     }
 
     public static Object getProxy(Object targetObject) {
+        log.info("{}",targetObject.getClass());
         //JDK动态代理只能针对实现了接口的类进行代理，newProxyInstance 函数所需参数就可看出
         return Proxy.newProxyInstance(targetObject.getClass().getClassLoader(), targetObject.getClass().getInterfaces(), new JdkProxy(targetObject));
     }

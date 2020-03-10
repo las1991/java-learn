@@ -17,6 +17,7 @@ public class ProxyTest {
         bookService.addBook(new Book(2L, "算法导论"));
         Book book = bookService.getBook(2L);
         log.info("{}", book);
+        log.info("bookService: {}", bookService.getClass());
     }
 
     @Test
@@ -25,6 +26,7 @@ public class ProxyTest {
         bookService.addBook(new Book(2L, "算法导论"));
         Book book = bookService.getBook(2L);
         log.info("{}", book);
+        log.info("bookService: {}", bookService.getClass());
     }
 
 }
