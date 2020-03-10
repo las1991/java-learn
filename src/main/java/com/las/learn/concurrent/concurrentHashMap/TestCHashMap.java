@@ -1,7 +1,6 @@
 package com.las.learn.concurrent.concurrentHashMap;
 
 import org.junit.Test;
-import sun.misc.Unsafe;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

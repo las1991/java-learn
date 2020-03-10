@@ -1,27 +1,15 @@
 package com.las.learn.proxy;
 
+import lombok.Data;
+
+@Data
 public class Book {
-    private long id;
+    private Long id;
     private String name;
 
-    public Book(long id, String name) {
+    public Book(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
