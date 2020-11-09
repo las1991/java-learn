@@ -6,7 +6,6 @@ import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
 /**
  * @auther: liansheng
@@ -29,13 +28,13 @@ public class CglibProxy implements MethodInterceptor {
         return invoke;
     }
 
-    public static Object getProxy(Object targetObject) {
+    public static <T> T getProxy(Object targetObject) {
         log.info("{}",targetObject.getClass());
         Enhancer enhancer = new Enhancer();
         //设置父类,因为Cglib是针对指定的类生成一个子类，所以需要指定父类
         enhancer.setSuperclass(targetObject.getClass());
         enhancer.setCallback(new CglibProxy(targetObject));// 设置回调
         Object result = enhancer.create();//创建并返回代理对象
-        return result;
+        return (T) result;
     }
 }
