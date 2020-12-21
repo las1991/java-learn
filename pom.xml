@@ -24,6 +24,9 @@
         <module>classloader</module>
         <module>utils</module>
         <module>log</module>
+        <module>zookeeper</module>
+        <module>jedis</module>
+        <module>redisson</module>
     </modules>
 
     <properties>
